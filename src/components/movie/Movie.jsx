@@ -1,8 +1,13 @@
-import {useParams, Link } from "react-router-dom"
+import {useParams, Link } from "react-router-dom";
 import getMovie from "../../services/getMovie";
 const Movie = () =>{
     const {id} = useParams();
-    const {isLoading, error, data: movie} = getMovie(`&i=${id}`);
+    console.log(id);
+    const {isLoading, error, data:movie} = getMovie(`&i=${id}`);
+    const red = getMovie(`&i=${id}`);
+    console.log(red);
+    console.log(id);
+    console.log(movie);
     if(isLoading){
         return <div className="loading"></div>
     }

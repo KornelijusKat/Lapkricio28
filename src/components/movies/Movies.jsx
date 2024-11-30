@@ -11,9 +11,10 @@ const Movies = () =>{
         <section className="movies">
              {console.log(movies)}
             {movies.map((movie) =>{
-                const {imbdID: id, Poster: poster, Title: title, Year: year} = movie;
+                const {imdbID: id, Poster: poster, Title: title, Year: year} = movie;
+                console.log(id);
                 return(
-                    <Link to={`movies/${id}`} key={id} className="movie">
+                    <Link to={`/movies/${id}`} key={id} className="movie">
                         <article>
                             <img src={poster === 'N/A' ? url: poster} alt={title}></img>
                             <h4 className="title">{title}</h4>
